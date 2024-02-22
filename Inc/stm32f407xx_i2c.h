@@ -27,7 +27,7 @@ Integrated Circuit peripheral:					@@@@@@@@@@@@@@@@@   @@@@@          @@@@@@@@@@
 #define __STM32F407XX_I2C_H_
 
 
-#include "stm32f407xx.h"
+#include <stm32f407xx.h>
 
 /*
  * Configuration structure for I2Cx peripheral

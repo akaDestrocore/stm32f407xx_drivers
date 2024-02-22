@@ -1,7 +1,7 @@
 ﻿
 /* Includes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #include <simple_delay.h>
-#include "stm32f407xx.h"
+#include <stm32f407xx.h>
 
 void TIM1_Config(void)
 {

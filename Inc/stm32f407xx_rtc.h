@@ -25,8 +25,8 @@ Time Clock peripheral:							@@@@@@@@@@@@@@@@@   @@@@@          @@@@@@@@@@@ @
 #ifndef __STM32F407XX_RTC_H_
 #define __STM32F407XX_RTC_H_
 
-#include "stm32f407xx.h"
 #include <stdint.h>
+#include <stm32f407xx.h>
 
 typedef enum
 {
