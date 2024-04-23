@@ -1034,7 +1034,7 @@ void I2C_Error_IRQHandling(I2C_Handle_t *pI2CHandle)
 	{
 		//This is Bus error
 		//clear the bus error flag
-		pI2CHandle->pI2Cx->SR1.bit.berr == RESET;
+		pI2CHandle->pI2Cx->SR1.bit.berr = RESET;
 
 		//notify the application about the error
 	   I2C_ApplicationEventCallback(pI2CHandle,I2C_ERROR_BERR);
