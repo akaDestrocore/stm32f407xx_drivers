@@ -137,6 +137,15 @@ typedef enum{
  I2C_EV_DATA_RCV
 }I2C_AppEvent_t;
 
+/*
+ * I2C memory address sizes
+ */
+typedef enum
+{
+	I2C_MEMADD_SIZE_16BIT 	= 0,
+	I2C_MEMADD_SIZE_8BIT 	= 1
+}I2C_MEMADD_SIZE_t;
+
 /********************************************************************************************/
 /*								APIs supported by this driver								*/
 /*		 For more information about the APIs check the function definitions					*/
@@ -181,6 +190,7 @@ void I2C_Error_IRQHandling(I2C_Handle_t *pI2CHandle);
  */
 void I2C_PeripheralControl(I2C_RegDef_t *pI2Cx, uint8_t state);
 uint8_t I2C_GetFlagStatus(I2C_RegDef_t *pI2Cx , uint32_t FlagName);
+void I2C_Mem_Write(I2C_Handle_t *pI2CHandle, uint16_t DevAddress, uint16_t MemAddress, uint16_t MemAddSize, uint8_t *pData, uint16_t Size);
 void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t state);
 void I2C_GenerateStopCondition(I2C_RegDef_t *pI2Cx);
 

@@ -461,7 +461,7 @@ void I2C_MasterSendData(I2C_Handle_t *pI2CHandle,uint8_t *pTxbuffer, uint32_t Le
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- blocking function																*/
+/* @Note				- blocking function																	*/
 /********************************************************************************************************/
 void I2C_MasterReceiveData(I2C_Handle_t *pI2CHandle,uint8_t *pRxBuffer, uint8_t Len, uint8_t SlaveAddr,uint8_t Sr)
 {
@@ -547,6 +547,107 @@ void I2C_MasterReceiveData(I2C_Handle_t *pI2CHandle,uint8_t *pRxBuffer, uint8_t 
 	}
 
 }
+
+/********************************************************************************************************/
+/* @function name 		- I2C_Mem_Write																	*/
+/*																										*/
+/* @brief				- Write data to a specific memory address of an I2C device						*/
+/*																										*/
+/* @parameter[in]		- pointer to I2C handle address													*/
+/*																										*/
+/* @parameter[in]		- device address																*/
+/*																										*/
+/* @parameter[in]		- memory address																*/
+/*																										*/
+/* @parameter[in]		- size of memory address (1 or 2 bytes)											*/
+/*																										*/
+/* @parameter[in]		- pointer to data buffer containing data to be written							*/
+/*																										*/
+/* @parameter[in]		- size of data buffer															*/
+/*																										*/
+/* @return				- none																			*/
+/*																										*/
+/* @Note					- blocking function																*/
+/********************************************************************************************************/
+void I2C_Mem_Write(I2C_Handle_t *pI2CHandle, uint16_t DevAddress, uint16_t MemAddress, uint16_t MemAddSize, uint8_t *pData, uint16_t Size)
+{
+    // Generate the Start Condition
+    I2C_GenerateStartCondition(pI2CHandle->pI2Cx);
+
+    // Wait until SB flag is set
+    while (!I2C_GetFlagStatus(pI2CHandle->pI2Cx, I2C_SR1_SB));
+
+    // Send the device address with write option
+    I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx, DevAddress);
+
+    // Wait until ADDR flag is set
+    while (!I2C_GetFlagStatus(pI2CHandle->pI2Cx, I2C_SR1_ADDR))
+    {
+
+    }
+
+    // Clear the ADDR flag
+    I2C_ClearADDRFlag(pI2CHandle);
+
+    // Wait until TXE flag is set
+    while (!I2C_GetFlagStatus(pI2CHandle->pI2Cx, I2C_SR1_TxE))
+    {
+
+    }
+
+    // If memory address size is 16 bits
+    if (MemAddSize == I2C_MEMADD_SIZE_16BIT)
+    {
+        // Send the high byte of the memory address
+        pI2CHandle->pI2Cx->DR.bit.dr = (uint8_t)((MemAddress & 0xFF00) >> 8);
+
+        // Wait until TXE flag is set
+        while (!I2C_GetFlagStatus(pI2CHandle->pI2Cx, I2C_SR1_TxE))
+        {
+
+        }
+
+        // Send the low byte of the memory address
+        pI2CHandle->pI2Cx->DR.bit.dr = (uint8_t)(MemAddress & 0x00FF);
+    }
+    else
+    {
+        // Memory address size is 8 bits, send the memory address
+        pI2CHandle->pI2Cx->DR.bit.dr = (uint8_t)MemAddress;
+    }
+
+    // Wait until TXE flag is set
+    while (!I2C_GetFlagStatus(pI2CHandle->pI2Cx, I2C_SR1_TxE))
+    {
+
+    }
+
+    // Write the data to the memory
+    while (Size > 0)
+    {
+        pI2CHandle->pI2Cx->DR.bit.dr = *pData;
+        pData++;
+        Size--;
+
+        // Wait until TXE flag is set
+        while (!I2C_GetFlagStatus(pI2CHandle->pI2Cx, I2C_SR1_TxE))
+        {
+
+        }
+    }
+
+    // Wait until BTF flag is set
+    while (!I2C_GetFlagStatus(pI2CHandle->pI2Cx, I2C_SR1_BTF))
+    {
+
+    }
+
+    // Generate the Stop Condition
+    I2C_GenerateStopCondition(pI2CHandle->pI2Cx);
+}
+
+
+
 
 /********************************************************************************************************/
 /* @function name 		- I2C_ManageAcking																*/
