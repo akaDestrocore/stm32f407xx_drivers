@@ -196,7 +196,7 @@ typedef enum
 }RCC_MCOx_t;
 
 /*
- * @RCC_MCO_Index MCO Index
+ * @RCC_MCO1_Index MCO Index
  */
 typedef enum
 {
@@ -204,8 +204,19 @@ typedef enum
 	RCC_MCO1SOURCE_LSE = 0x1U,
 	RCC_MCO1SOURCE_HSE = 0x2U,
 	RCC_MCO1SOURCE_PLLCLK = 0x3U
-}RCC_MCOxSOURCE_t;
+}RCC_MCO1SOURCE_t;
 
+
+/*
+ * @RCC_MCO2_Index MCO Index
+ */
+typedef enum
+{
+	RCC_MCO2SOURCE_SYSCLK = 0x0U,
+	RCC_MCO2SOURCE_PLLI2S = 0x1U,
+	RCC_MCO2SOURCE_HSE = 0x2U,
+	RCC_MCO2SOURCE_PLLCLK = 0x3U
+}RCC_MCO2SOURCE_t;
 
 /*
  *	Oscillator Initialization function
