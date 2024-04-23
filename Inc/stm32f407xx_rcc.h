@@ -218,6 +218,15 @@ typedef enum
 	RCC_MCO2SOURCE_PLLCLK = 0x3U
 }RCC_MCO2SOURCE_t;
 
+typedef enum
+{
+	RCC_MCODIV_1 = 0x0U,
+	RCC_MCODIV_2 = 0x4U,
+	RCC_MCODIV_3 = 0x5U,
+	RCC_MCODIV_4 = 0x6U,
+	RCC_MCODIV_5 = 0x7U
+}RCC_MCODIV_t;
+
 /*
  *	Oscillator Initialization function
  */
