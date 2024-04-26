@@ -25,7 +25,7 @@
 
 #include <stm32f407xx_rtc.h>
 
-#define HSE_VALUE  8000000U
+//#define HSE_VALUE  8000000U
 
 
 static uint8_t RTC_ConvertYear(uint16_t year);
@@ -82,8 +82,12 @@ void RTC_ClockControl(RTC_Clock_State_t state)
 /********************************************************************************************************/
 void RTC_Init(RTC_Handle_t *pRTCHandle)
 {
+	PWR->CR.bit.dbp = SET;
+
 	//enable RTC clock
 	RTC_ClockControl(RTC_ENABLE);
+
+	RCC->BDCR.bit.rtcsel = 2; //LSI
 
 	//Disable RTC registers write protection
 	RTC->WPR.bit.key = 0xCA;
@@ -248,7 +252,7 @@ void RTC_GetTime(RTC_Handle_t * pRTCHandle, Current_Date_Handle_t* pCurrentDateH
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void RTC_GetDate(RTC_Handle_t* pRTCHandle, Current_Date_Handle_t* pCurrentDateHandle)
 {
@@ -269,60 +273,142 @@ void RTC_GetDate(RTC_Handle_t* pRTCHandle, Current_Date_Handle_t* pCurrentDateHa
 	pCurrentDateHandle->Date.weekDay = DR_temp.bit.wdu;
 }
 
+/********************************************************************************************************/
+/* @function name 		- RTC_SystemClock_Config														*/
+/*																										*/
+/* @brief				- example system clock configuration when using RTC								*/
+/*																										*/
+/* @parameter[in]		- clock speed																	*/
+/*																										*/
+/* @return				- none																			*/
+/*																										*/
+/* @Note					- none																			*/
+/********************************************************************************************************/
+//void RTC_SystemClock_Config(uint32_t clk)
+//{
+//	RCC_OscInit_t rcc_osc = {0};
+//	RCC_ClkInit_t rcc_clk = {0};
+//
+//	//osc init
+//	rcc_osc.OscillatorType = RCC_OSCILLATORTYPE_LSI;
+//	rcc_osc.LSIState = RCC_LSI_ON;
+//	rcc_osc.PLL.State = RCC_PLL_ON;
+//	rcc_osc.PLL.Source = RCC_PLLCFGR_PLLSRC_HSE; 			// Use HSE as PLL input clock source
+//	rcc_osc.PLL.M = 4;										// HSE oscillator clock is 8MHz
+//	rcc_osc.PLL.N = (clk / HSE_VALUE) * rcc_osc.PLL.M * 2;		// Calculate PLL multiplication factor
+//	rcc_osc.PLL.P = 0;										// Set P to 0 (i.e. divide by 2) to get 84MHz system clock
+//	rcc_osc.PLL.Q = 4;										// Set Q to 4 to get 84MHz clock for USB OTG and SDIO
+//	RCC_OscConfig(&rcc_osc);
+//
+//	//select RTC clock source as LSI
+//	RCC->BDCR.bit.rtcsel = RCC_BDCR_RTCSEL_LSI;
+//
+//	rcc_clk.SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK;
+//	rcc_clk.AHBCLKDivider  = RCC_SYSCLK_DIV1;
+//	rcc_clk.APB1CLKDivider = RCC_HCLK_DIV4;
+//	rcc_clk.APB2CLKDivider = RCC_HCLK_DIV2;
+//
+//	RCC_ClockConfig(&rcc_clk);
+//
+//	// Set AHB, APB1, and APB2 prescalers
+//	if(clk <= 36000000)
+//	{
+//		rcc_clk.AHBCLKDivider = 0;  // AHB prescaler = 1
+//		rcc_clk.APB1CLKDivider = 0; // APB1 prescaler = 1
+//		rcc_clk.APB2CLKDivider = 0; // APB2 prescaler = 1
+//	}
+//	else if(clk <= 72000000)
+//	{
+//		rcc_clk.AHBCLKDivider  = 9; // AHB prescaler = 1
+//		rcc_clk.APB1CLKDivider = 5; // APB1 prescaler = 2
+//		rcc_clk.APB2CLKDivider = 4; // APB2 prescaler = 2
+//	}
+//	else if(clk <= 108000000)
+//	{
+//		rcc_clk.AHBCLKDivider = 0; // AHB prescaler = 1
+//		rcc_clk.APB1CLKDivider = 5; // APB1 prescaler = 4
+//		rcc_clk.APB2CLKDivider = 4; // APB2 prescaler = 2
+//	}
+//	else
+//	{
+//		rcc_clk.AHBCLKDivider = 0; 	// AHB prescaler = 1
+//		rcc_clk.APB1CLKDivider = 5; // APB1 prescaler = 4
+//		rcc_clk.APB2CLKDivider = 4; // APB2 prescaler = 2
+//	}
+//
+//}
 
-void RTC_SystemClock_Config(uint32_t clk)
-{
-	RCC_OscInit_t rcc_osc = {0};
-	RCC_ClkInit_t rcc_clk = {0};
 
-	//osc init
-	rcc_osc.OscillatorType = RCC_OSCILLATORTYPE_LSI;
-	rcc_osc.LSIState = RCC_LSI_ON;
-	rcc_osc.PLL.State = RCC_PLL_ON;
-	rcc_osc.PLL.Source = RCC_PLLCFGR_PLLSRC_HSE; 			// Use HSE as PLL input clock source
-	rcc_osc.PLL.M = 4;										// HSE oscillator clock is 8MHz
-	rcc_osc.PLL.N = (clk / HSE_VALUE) * rcc_osc.PLL.M * 2;		// Calculate PLL multiplication factor
-	rcc_osc.PLL.P = 0;										// Set P to 0 (i.e. divide by 2) to get 84MHz system clock
-	rcc_osc.PLL.Q = 4;										// Set Q to 4 to get 84MHz clock for USB OTG and SDIO
-	RCC_OscConfig(&rcc_osc);
+/********************************************************************************************************/
+/* @function name 		- RTC_SetAlarm_IT																*/
+/*																										*/
+/* @brief				- sets the specified RTC Alarm with Interrupt									*/
+/*																										*/
+/* @parameter[in]		- pointer to RTC Handle structure												*/
+/*																										*/
+/* @parameter[in]		- pointer to alarm handle structure												*/
+/*																										*/
+/* @return				- none																			*/
+/*																										*/
+/* @Note					- none																			*/
+/********************************************************************************************************/
+void RTC_SetAlarm_IT(RTC_Handle_t *pRTCHandle, RTC_AlarmType_t alarmType, RTC_Alarm_t *pAlarm) {
+    // Disable RTC registers write protection
+    RTC->WPR.bit.key = 0xCA;
+    RTC->WPR.bit.key = 0x53;
 
-	//select RTC clock source as LSI
-	RCC->BDCR.bit.rtcsel = RCC_BDCR_RTCSEL_LSI;
+    // Enable initialization mode
+    RTC->ISR.bit.init = SET;
 
-	rcc_clk.SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK;
-	rcc_clk.AHBCLKDivider  = RCC_SYSCLK_DIV1;
-	rcc_clk.APB1CLKDivider = RCC_HCLK_DIV4;
-	rcc_clk.APB2CLKDivider = RCC_HCLK_DIV2;
+    while (!(SET == RTC->ISR.bit.initf))
+    {
+        // Wait till initialization mode is set
+    }
 
-	RCC_ClockConfig(&rcc_clk);
+    // Set RTC alarm configuration
+    RTC_ALRMx_Reg_t *pALRM = (alarmType == RTC_ALARM_A) ? &RTC->ALRMAR : &RTC->ALRMBR;
 
-	// Set AHB, APB1, and APB2 prescalers
-	if(clk <= 36000000)
-	{
-		rcc_clk.AHBCLKDivider = 0;  // AHB prescaler = 1
-		rcc_clk.APB1CLKDivider = 0; // APB1 prescaler = 1
-		rcc_clk.APB2CLKDivider = 0; // APB2 prescaler = 1
-	}
-	else if(clk <= 72000000)
-	{
-		rcc_clk.AHBCLKDivider  = 9; // AHB prescaler = 1
-		rcc_clk.APB1CLKDivider = 5; // APB1 prescaler = 2
-		rcc_clk.APB2CLKDivider = 4; // APB2 prescaler = 2
-	}
-	else if(clk <= 108000000)
-	{
-		rcc_clk.AHBCLKDivider = 0; // AHB prescaler = 1
-		rcc_clk.APB1CLKDivider = 5; // APB1 prescaler = 4
-		rcc_clk.APB2CLKDivider = 4; // APB2 prescaler = 2
-	}
-	else
-	{
-		rcc_clk.AHBCLKDivider = 0; 	// AHB prescaler = 1
-		rcc_clk.APB1CLKDivider = 5; // APB1 prescaler = 4
-		rcc_clk.APB2CLKDivider = 4; // APB2 prescaler = 2
-	}
+    pALRM->bit.hu = pAlarm->hour / 10;
+    pALRM->bit.ht = pAlarm->hour % 10;
+    pALRM->bit.mnu = pAlarm->minute / 10;
+    pALRM->bit.mnt = pAlarm->minute % 10;
+    pALRM->bit.su = pAlarm->second / 10;
+    pALRM->bit.st = pAlarm->second % 10;
 
+    // masking options configuration
+    pALRM->bit.msk1 = pAlarm->sec_msk;
+    pALRM->bit.msk2 = pAlarm->min_msk;
+    pALRM->bit.msk3 = pAlarm->hour_msk;
+    pALRM->bit.msk4 = pAlarm->dateweek_msk;
+
+    // Clear the Alarm flag
+    if (alarmType == RTC_ALARM_A)
+    {
+        RTC->ISR.bit.alraf = RESET;
+    }
+    else
+    {
+        RTC->ISR.bit.alrbf = RESET;
+    }
+
+    // Enable the Alarm interrupt
+    if(alarmType == RTC_ALARM_A)
+    {
+        RTC->CR.bit.alraie = SET;
+    }
+    else
+    {
+        RTC->CR.bit.alrbie = SET;
+    }
+
+    // Disable initialization mode
+    RTC->ISR.bit.init = RESET;
+
+    // Enable RTC registers write protection
+    RTC->WPR.reg = 0xFF;
 }
+
+
 
 /*
  * Helper functions
