@@ -23,7 +23,7 @@
 										@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 										@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@													*/
 
-#include <stm32f407xx_rcc.h>
+#include <stm32f407xx.h>
 
 #define HSI_VALUE    ((uint32_t)16000000U) // HSI default value
 #define HSE_VALUE    8000000U // HSE default value is 8000000U
@@ -133,6 +133,8 @@ void RCC_OscConfig(RCC_OscInit_t *pRCC_Osc)
 			}
 		}
 	//configure PLL
+	RCC->CR.bit.pllon = RESET;
+	RCC_PLLCFGR_Reg_t PLLCFGR_temp;
 	if(RCC_PLL_NONE != pRCC_Osc->PLL.State)
 	{
 		switch(pRCC_Osc->PLL.State)
@@ -144,11 +146,12 @@ void RCC_OscConfig(RCC_OscInit_t *pRCC_Osc)
 			}
 			case RCC_PLL_ON:
 			{
-				RCC->PLLCFGR.bit.pllsrc = pRCC_Osc->PLL.Source;
-				RCC->PLLCFGR.bit.pllm = pRCC_Osc->PLL.M;
-				RCC->PLLCFGR.bit.pllp = pRCC_Osc->PLL.P;
-				RCC->PLLCFGR.bit.plln = pRCC_Osc->PLL.N;
-				RCC->PLLCFGR.bit.pllq = pRCC_Osc->PLL.Q;
+				PLLCFGR_temp.bit.pllsrc = pRCC_Osc->PLL.Source;
+				PLLCFGR_temp.bit.pllm = pRCC_Osc->PLL.M;
+				PLLCFGR_temp.bit.pllp = pRCC_Osc->PLL.P;
+				PLLCFGR_temp.bit.plln = pRCC_Osc->PLL.N;
+				PLLCFGR_temp.bit.pllq = pRCC_Osc->PLL.Q;
+				RCC->PLLCFGR.reg = PLLCFGR_temp.reg;
 				RCC->CR.bit.pllon = RCC_CR_PLLON;
 				break;
 			}
@@ -250,7 +253,7 @@ void RCC_ClockConfig(RCC_ClkInit_t  *pRCC_Clk)
 /*																										*/
 /* @return				- System clock frequency														*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint32_t RCC_GetSysClockFreq(void)
 {
@@ -378,7 +381,7 @@ void RCC_MCOConfig(uint32_t RCC_MCOx, uint32_t RCC_MCOSource, uint32_t RCC_MCODi
 
 		MCO1.pGPIOx = GPIOA;
 		MCO1.GPIO_Config.PinMode = GPIO_MODE_AF;
-		MCO1.GPIO_Config.PinAltFuncMode = GPIO_AF0_MCO;
+		MCO1.GPIO_Config.PinAltFuncMode = 0;
 		MCO1.GPIO_Config.PinOPType = GPIO_OUTPUT_PP;
 		MCO1.GPIO_Config.PinPuPdControl = GPIO_PIN_NO_PUPD;
 		MCO1.GPIO_Config.PinSpeed = GPIO_SPEED_FAST;
@@ -395,7 +398,7 @@ void RCC_MCOConfig(uint32_t RCC_MCOx, uint32_t RCC_MCOSource, uint32_t RCC_MCODi
 
 		MCO2.pGPIOx = GPIOC;
 		MCO2.GPIO_Config.PinMode = GPIO_MODE_AF;
-		MCO2.GPIO_Config.PinAltFuncMode = GPIO_AF0_MCO;
+		MCO2.GPIO_Config.PinAltFuncMode = 0;
 		MCO2.GPIO_Config.PinOPType = GPIO_OUTPUT_PP;
 		MCO2.GPIO_Config.PinPuPdControl = GPIO_PIN_NO_PUPD;
 		MCO2.GPIO_Config.PinSpeed = GPIO_SPEED_FAST;
