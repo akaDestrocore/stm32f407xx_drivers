@@ -43,7 +43,7 @@
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void GPIO_PeriphClockControl(GPIO_RegDef_t *pGPIOx, uint8_t state)
 {
@@ -89,7 +89,7 @@ void GPIO_PeriphClockControl(GPIO_RegDef_t *pGPIOx, uint8_t state)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 {
@@ -191,7 +191,7 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void GPIO_DeInit(GPIO_RegDef_t *pGPIOx)
 {
@@ -240,7 +240,7 @@ void GPIO_DeInit(GPIO_RegDef_t *pGPIOx)
 /*																										*/
 /* @return				- 0 or 1																		*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t GPIO_ReadPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 {
@@ -258,7 +258,7 @@ uint8_t GPIO_ReadPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 /*																										*/
 /* @return				- read port value																*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint16_t GPIO_ReadPort(GPIO_RegDef_t *pGPIOx)
 {
@@ -280,7 +280,7 @@ uint16_t GPIO_ReadPort(GPIO_RegDef_t *pGPIOx)
 /*																										*/
 /* @return				-	none																		*/
 /*																										*/
-/* @Note				-	none																		*/
+/* @Note					-	none																		*/
 /********************************************************************************************************/
 void GPIO_WritePin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t val)
 {
@@ -304,7 +304,7 @@ void GPIO_WritePin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t val)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void GPIO_WritePort(GPIO_RegDef_t *pGPIOx, uint8_t val)
 {
@@ -322,7 +322,7 @@ void GPIO_WritePort(GPIO_RegDef_t *pGPIOx, uint8_t val)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 {
@@ -345,7 +345,7 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void GPIO_IRQConfig(uint8_t IRQNumber, uint32_t IRQPriority, uint8_t state)
 {
@@ -401,7 +401,7 @@ void GPIO_IRQConfig(uint8_t IRQNumber, uint32_t IRQPriority, uint8_t state)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void GPIO_IRQHandling(uint8_t PinNumber)
 {

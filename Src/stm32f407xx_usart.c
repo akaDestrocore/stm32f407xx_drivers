@@ -42,7 +42,7 @@
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void USART_SetBaudRate(USART_RegDef_t *pUSARTx, uint32_t BaudRate)
 {
@@ -105,7 +105,7 @@ void USART_SetBaudRate(USART_RegDef_t *pUSARTx, uint32_t BaudRate)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void USART_Init(USART_Handle_t *pUSARTHandle)
 {
@@ -211,7 +211,7 @@ void USART_Init(USART_Handle_t *pUSARTHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void USART_DeInit(USART_Handle_t *pUSARTHandle)
 {
@@ -260,7 +260,7 @@ void USART_DeInit(USART_Handle_t *pUSARTHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void USART_PeripheralControl(USART_RegDef_t *pUSARTx, uint8_t state)
 {
@@ -280,7 +280,7 @@ void USART_PeripheralControl(USART_RegDef_t *pUSARTx, uint8_t state)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void USART_PeriphClockControl(USART_RegDef_t *pUSARTx, uint8_t state)
 {
@@ -318,7 +318,7 @@ void USART_PeriphClockControl(USART_RegDef_t *pUSARTx, uint8_t state)
 /*																										*/
 /* @return				- flag state																	*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t USART_GetFlagStatus(USART_RegDef_t *pUSARTx, USART_SR_flag_t StatusFlagName)
 {
@@ -391,7 +391,7 @@ uint8_t USART_GetFlagStatus(USART_RegDef_t *pUSARTx, USART_SR_flag_t StatusFlagN
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- blocking function																*/
+/* @Note					- blocking function																*/
 /********************************************************************************************************/
 void USART_SendData(USART_Handle_t *pUSARTHandle, uint8_t *pTxBuffer, uint32_t Len)
 {
@@ -454,7 +454,7 @@ void USART_SendData(USART_Handle_t *pUSARTHandle, uint8_t *pTxBuffer, uint32_t L
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- blocking function																*/
+/* @Note					- blocking function																*/
 /********************************************************************************************************/
 void USART_ReceiveData(USART_Handle_t *pUSARTHandle, uint8_t *pRxBuffer, uint32_t Len)
 {
@@ -531,7 +531,7 @@ void USART_ReceiveData(USART_Handle_t *pUSARTHandle, uint8_t *pRxBuffer, uint32_
 /*																										*/
 /* @return				- TX state																		*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t USART_SendDataIT(USART_Handle_t *pUSARTHandle,uint8_t *pTxBuffer, uint32_t Len)
 {
@@ -567,7 +567,7 @@ uint8_t USART_SendDataIT(USART_Handle_t *pUSARTHandle,uint8_t *pTxBuffer, uint32
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t USART_ReceiveDataIT(USART_Handle_t *pUSARTHandle,uint8_t *pRxBuffer, uint32_t Len)
 {
@@ -600,7 +600,7 @@ uint8_t USART_ReceiveDataIT(USART_Handle_t *pUSARTHandle,uint8_t *pRxBuffer, uin
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void USART_ClearFlag(USART_RegDef_t *pUSARTx, uint16_t StatusFlagName)
 {
@@ -676,7 +676,7 @@ void USART_ClearFlag(USART_RegDef_t *pUSARTx, uint16_t StatusFlagName)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void USART_IRQInterruptConfig(uint8_t IRQNumber,uint32_t IRQPriority,uint8_t state)
 {
@@ -734,7 +734,7 @@ void USART_IRQInterruptConfig(uint8_t IRQNumber,uint32_t IRQPriority,uint8_t sta
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void USART_IRQHandling(USART_Handle_t *pUSARTHandle)
 {

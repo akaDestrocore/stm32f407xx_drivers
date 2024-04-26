@@ -78,7 +78,7 @@ uint8_t tim_slave_timer_set_config(TIM_Handle_t *pTIMHandle,TIM_Slave_Config_t *
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_PeriphControl(TIM_Handle_t *pTIMHandle, uint8_t state)
 {
@@ -172,7 +172,7 @@ void TIM_PeriphControl(TIM_Handle_t *pTIMHandle, uint8_t state)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_Base_Init(TIM_Handle_t *pTIMHandle)
 {
@@ -202,7 +202,7 @@ void TIM_Base_Init(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_Base_DeInit(TIM_Handle_t *pTIMHandle)
 {
@@ -270,7 +270,7 @@ void TIM_Base_DeInit(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_Base_Start(TIM_Handle_t *pTIMHandle)
 {
@@ -296,7 +296,7 @@ void TIM_Base_Start(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_Base_Stop(TIM_Handle_t *pTIMHandle)
 {
@@ -316,7 +316,7 @@ void TIM_Base_Stop(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_Base_StartIT(TIM_Handle_t *pTIMHandle)
 {
@@ -340,7 +340,7 @@ void TIM_Base_StartIT(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_Base_StopIT(TIM_Handle_t *pTIMHandle)
 {
@@ -367,7 +367,7 @@ void TIM_Base_StopIT(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_OC_Init(TIM_Handle_t *pTIMHandle)
 {
@@ -402,7 +402,7 @@ void TIM_OC_Init(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_OC_DeInit(TIM_Handle_t *pTIMHandle)
 {
@@ -473,7 +473,7 @@ void TIM_OC_DeInit(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_OC_Start(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 {
@@ -531,7 +531,7 @@ void TIM_OC_Start(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_OC_Stop(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 {
@@ -573,7 +573,7 @@ void TIM_OC_Stop(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_OC_StartIT(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 {
@@ -656,7 +656,7 @@ void TIM_OC_StartIT(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_OC_StopIT(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 {
@@ -726,7 +726,7 @@ void TIM_OC_StopIT(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- reset timer after switching between center aligned mode and edge counter mode	*/
+/* @Note					- reset timer after switching between center aligned mode and edge counter mode	*/
 /********************************************************************************************************/
 void TIM_PWM_Init(TIM_Handle_t *pTIMHandle)
 {
@@ -758,7 +758,7 @@ void TIM_PWM_Init(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_PWM_DeInit(TIM_Handle_t *pTIMHandle)
 {
@@ -790,7 +790,7 @@ void TIM_PWM_DeInit(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_PWM_Start(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 {
@@ -834,7 +834,7 @@ void TIM_PWM_Start(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_PWM_Stop(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 {
@@ -879,7 +879,7 @@ void TIM_PWM_Stop(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_PWM_StartIT(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 {
@@ -949,7 +949,7 @@ void TIM_PWM_StartIT(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_PWM_StopIT(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 {
@@ -1020,7 +1020,7 @@ void TIM_PWM_StopIT(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_IC_Init(TIM_Handle_t *pTIMHandle)
 {
@@ -1056,7 +1056,7 @@ void TIM_IC_Init(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_IC_DeInit(TIM_Handle_t *pTIMHandle)
 {
@@ -1127,7 +1127,7 @@ void TIM_IC_DeInit(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_IC_Start(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 {
@@ -1171,7 +1171,7 @@ void TIM_IC_Start(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_IC_Stop(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 {
@@ -1199,7 +1199,7 @@ void TIM_IC_Stop(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_IC_StartIT(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 {
@@ -1270,7 +1270,7 @@ void TIM_IC_StartIT(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_IC_StopIT(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 {
@@ -1325,7 +1325,7 @@ void TIM_IC_StopIT(TIM_Handle_t *pTIMHandle, uint8_t Channel)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- CH1 and CH2 are reserved and can't be used in this mode 						*/
+/* @Note					- CH1 and CH2 are reserved and can't be used in this mode 						*/
 /********************************************************************************************************/
 void TIM_OnePulse_Init(TIM_Handle_t *pTIMHandle, uint32_t OnePulseMode)
 {
@@ -1434,7 +1434,7 @@ void TIM_OnePulse_Init(TIM_Handle_t *pTIMHandle, uint32_t OnePulseMode)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_OnePulse_DeInit(TIM_Handle_t *pTIMHandle)
 {
@@ -1505,7 +1505,7 @@ void TIM_OnePulse_DeInit(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_OnePulse_Start(TIM_Handle_t *pTIMHandle)
 {
@@ -1561,7 +1561,7 @@ void TIM_OnePulse_Start(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_OnePulse_Stop(TIM_Handle_t *pTIMHandle)
 {
@@ -1611,7 +1611,7 @@ void TIM_OnePulse_Stop(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_OnePulse_StartIT(TIM_Handle_t *pTIMHandle)
 {
@@ -1676,7 +1676,7 @@ void TIM_OnePulse_StartIT(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_OnePulse_StopIT(TIM_Handle_t *pTIMHandle)
 {
@@ -1736,7 +1736,7 @@ void TIM_OnePulse_StopIT(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- flag state																	*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t TIM_GetFlagStatus(TIM_Handle_t *pTIMHandle, TIM_SR_flag_t StatusFlagName)
 {
@@ -2311,7 +2311,7 @@ uint8_t TIM_GetFlagStatus(TIM_Handle_t *pTIMHandle, TIM_SR_flag_t StatusFlagName
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_IRQHandling(TIM_Handle_t *pTIMHandle)
 {
@@ -2461,7 +2461,7 @@ void TIM_IRQHandling(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_OC_ConfigChannel(TIM_Handle_t *pTIMHandle, TIM_OC_Config_t *sConfig, uint8_t Channel)
 {
@@ -2511,7 +2511,7 @@ void TIM_OC_ConfigChannel(TIM_Handle_t *pTIMHandle, TIM_OC_Config_t *sConfig, ui
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_PWM_ConfigChannel(TIM_Handle_t *pTIMHandle, TIM_OC_Config_t *sConfig, uint8_t Channel)
 {
@@ -2604,7 +2604,7 @@ void TIM_PWM_ConfigChannel(TIM_Handle_t *pTIMHandle, TIM_OC_Config_t *sConfig, u
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_IC_ConfigChannel(TIM_Handle_t *pTIMHandle, TIM_IC_Config_t *sConfig, uint8_t Channel)
 {
@@ -2691,7 +2691,7 @@ void TIM_IC_ConfigChannel(TIM_Handle_t *pTIMHandle, TIM_IC_Config_t *sConfig, ui
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_OnePulse_ConfigChannel(TIM_Handle_t *pTIMHandle, TIM_OnePulse_Config_t *sConfig,
 		uint8_t OutputChannel,  uint8_t InputChannel)
@@ -2804,7 +2804,7 @@ void TIM_OnePulse_ConfigChannel(TIM_Handle_t *pTIMHandle, TIM_OnePulse_Config_t 
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_ConfigOCrefClear(TIM_Handle_t *pTIMHandle, TIM_Clear_Input_Config_t *sClearInputConfig, uint8_t Channel)
 {
@@ -2945,7 +2945,7 @@ void TIM_ConfigOCrefClear(TIM_Handle_t *pTIMHandle, TIM_Clear_Input_Config_t *sC
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_ConfigClockSource(TIM_Handle_t *pTIMHandle, TIM_Clock_Config_t *sClockSourceConfig)
 {
@@ -3054,7 +3054,7 @@ void TIM_ConfigClockSource(TIM_Handle_t *pTIMHandle, TIM_Clock_Config_t *sClockS
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_ConfigTI1Input(TIM_Handle_t *pTIMHandle, uint32_t TI1_Selection)
 {
@@ -3082,7 +3082,7 @@ void TIM_ConfigTI1Input(TIM_Handle_t *pTIMHandle, uint32_t TI1_Selection)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_SlaveConfigSynchro(TIM_Handle_t *pTIMHandle, TIM_Slave_Config_t *sSlaveConfig)
 {
@@ -3115,7 +3115,7 @@ void TIM_SlaveConfigSynchro(TIM_Handle_t *pTIMHandle, TIM_Slave_Config_t *sSlave
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void TIM_SlaveConfigSynchro_IT(TIM_Handle_t *pTIMHandle, TIM_Slave_Config_t *sSlaveConfig)
 {
@@ -3148,7 +3148,7 @@ void TIM_SlaveConfigSynchro_IT(TIM_Handle_t *pTIMHandle, TIM_Slave_Config_t *sSl
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- basic timers can only generate an update event.TIM_EVENTSOURCE_COM is 		*/
+/* @Note					- basic timers can only generate an update event.TIM_EVENTSOURCE_COM is 		*/
 /* 						 relevant only with advanced timer instances. TIM_EVENTSOURCE_BREAK are relevant*/
 /*						  only for timer instances														*/
 /********************************************************************************************************/
@@ -3223,7 +3223,7 @@ void TIM_GenerateEvent(TIM_Handle_t *pTIMHandle, uint32_t EventSource)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint32_t TIM_ReadCapturedValue(TIM_Handle_t *pTIMHandle, uint32_t Channel)
 {
@@ -3269,7 +3269,7 @@ uint32_t TIM_ReadCapturedValue(TIM_Handle_t *pTIMHandle, uint32_t Channel)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 __weak void TIM_PeriodElapsedCallback(TIM_Handle_t *pTIMHandle)
 {
@@ -3285,7 +3285,7 @@ __weak void TIM_PeriodElapsedCallback(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 __weak void TIM_PeriodElapsedHalfCpltCallback(TIM_Handle_t *pTIMHandle)
 {
@@ -3302,7 +3302,7 @@ __weak void TIM_PeriodElapsedHalfCpltCallback(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 __weak void TIM_OC_DelayElapsedCallback(TIM_Handle_t *pTIMHandle)
 {
@@ -3319,7 +3319,7 @@ __weak void TIM_OC_DelayElapsedCallback(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 __weak void TIM_IC_CaptureCallback(TIM_Handle_t *pTIMHandle)
 {
@@ -3336,7 +3336,7 @@ __weak void TIM_IC_CaptureCallback(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 __weak void TIM_IC_CaptureHalfCpltCallback(TIM_Handle_t *pTIMHandle)
 {
@@ -3353,7 +3353,7 @@ __weak void TIM_IC_CaptureHalfCpltCallback(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 __weak void TIM_PWM_PulseFinishedCallback(TIM_Handle_t *pTIMHandle)
 {
@@ -3370,7 +3370,7 @@ __weak void TIM_PWM_PulseFinishedCallback(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 __weak void TIM_PWM_PulseFinishedHalfCpltCallback(TIM_Handle_t *pTIMHandle)
 {
@@ -3387,7 +3387,7 @@ __weak void TIM_PWM_PulseFinishedHalfCpltCallback(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 __weak void TIM_TriggerCallback(TIM_Handle_t *pTIMHandle)
 {
@@ -3404,7 +3404,7 @@ __weak void TIM_TriggerCallback(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 __weak void TIM_TriggerHalfCpltCallback(TIM_Handle_t *pTIMHandle)
 {
@@ -3422,7 +3422,7 @@ __weak void TIM_TriggerHalfCpltCallback(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 __weak void TIM_ErrorCallback(TIM_Handle_t *pTIMHandle)
 {
@@ -3442,7 +3442,7 @@ __weak void TIM_ErrorCallback(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t TIM_Base_GetState(TIM_Handle_t *pTIMHandle)
 {
@@ -3459,7 +3459,7 @@ uint8_t TIM_Base_GetState(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t TIM_OC_GetState(TIM_Handle_t *pTIMHandle)
 {
@@ -3476,7 +3476,7 @@ uint8_t TIM_OC_GetState(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t TIM_PWM_GetState(TIM_Handle_t *pTIMHandle)
 {
@@ -3493,7 +3493,7 @@ uint8_t TIM_PWM_GetState(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t TIM_IC_GetState(TIM_Handle_t *pTIMHandle)
 {
@@ -3510,7 +3510,7 @@ uint8_t TIM_IC_GetState(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t TIM_OnePulse_GetState(TIM_Handle_t *pTIMHandle)
 {
@@ -3530,7 +3530,7 @@ uint8_t TIM_OnePulse_GetState(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- active channel																*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 TIM_ActiveChannel_t TIM_GetActiveChannel(TIM_Handle_t *pTIMHandle)
 {
@@ -3549,7 +3549,7 @@ TIM_ActiveChannel_t TIM_GetActiveChannel(TIM_Handle_t *pTIMHandle)
 /*																										*/
 /* @return				- active channel																*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t TIM_GetChannelState(TIM_Handle_t *pTIMHandle,  uint8_t Channel)
 {

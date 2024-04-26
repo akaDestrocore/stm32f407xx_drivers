@@ -59,7 +59,7 @@ static uint32_t sectcount;
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void FLASH_Init(FLASH_DATA_t blocksize)
 {
@@ -90,7 +90,7 @@ void FLASH_Init(FLASH_DATA_t blocksize)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void DeInit(void)
 {
@@ -121,7 +121,7 @@ void DeInit(void)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void FLASH_Unlock(void)
 {
@@ -146,7 +146,7 @@ void FLASH_Unlock(void)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void FLASH_Lock(void)
 {
@@ -165,7 +165,7 @@ void FLASH_Lock(void)
 /*																										*/
 /* @return				- kB count in this sector														*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint32_t FLASH_EraseSector(uint32_t destination)
 {
@@ -231,7 +231,7 @@ uint32_t FLASH_EraseSector(uint32_t destination)
 /*																										*/
 /* @parameter[in]		- FLASH sector beginning address												*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void FLASH_Erase(uint32_t destination)
 {
@@ -307,7 +307,7 @@ void FLASH_Erase(uint32_t destination)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t FLASH_Write(uint8_t *sourcedata, uint32_t len, uint32_t destination)
 {
@@ -384,7 +384,7 @@ uint8_t FLASH_Write(uint8_t *sourcedata, uint32_t len, uint32_t destination)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void FLASH_Read(uint32_t source, uint8_t *destination, uint32_t len)
 {
@@ -407,7 +407,7 @@ void FLASH_Read(uint32_t source, uint8_t *destination, uint32_t len)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void FLASH_Jump(void)
 {

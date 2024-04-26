@@ -45,7 +45,7 @@ static void spi_ovr_err_it_handle(SPI_Handle_t *pSPIHandle);
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void SPI_PeriphClockControl(SPI_RegDef_t *pSPIx, uint8_t state)
 {
@@ -78,7 +78,7 @@ void SPI_PeriphClockControl(SPI_RegDef_t *pSPIx, uint8_t state)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void SPI_Init(SPI_Handle_t *pSPIHandle)
 {
@@ -135,7 +135,7 @@ void SPI_Init(SPI_Handle_t *pSPIHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void SPI_DeInit(SPI_RegDef_t *pSPIx)
 {
@@ -167,7 +167,7 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx)
 /*																										*/
 /* @return				- flag state																	*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t SPI_GetFLagStatus(SPI_RegDef_t *pSPIx, SPI_SR_flag_t StatusFlagName)
 {
@@ -239,7 +239,7 @@ uint8_t SPI_GetFLagStatus(SPI_RegDef_t *pSPIx, SPI_SR_flag_t StatusFlagName)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- blocking call																	*/
+/* @Note					- blocking call																	*/
 /********************************************************************************************************/
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len)
 {
@@ -279,7 +279,7 @@ void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void SPI_PeripheralControl(SPI_RegDef_t *pSPIx, uint8_t state)
 {
@@ -297,7 +297,7 @@ void SPI_PeripheralControl(SPI_RegDef_t *pSPIx, uint8_t state)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void SPI_SSIConfig(SPI_RegDef_t *pSPIx, uint8_t state)
 {
@@ -318,7 +318,7 @@ void SPI_SSIConfig(SPI_RegDef_t *pSPIx, uint8_t state)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void SPI_SSOEConfig(SPI_RegDef_t *pSPIx, uint8_t state)
 {
@@ -337,7 +337,7 @@ void SPI_SSOEConfig(SPI_RegDef_t *pSPIx, uint8_t state)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- This is blocking call															*/
+/* @Note					- This is blocking call															*/
 /********************************************************************************************************/
 void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxBuffer, uint32_t Len)
 {
@@ -381,7 +381,7 @@ void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxBuffer, uint32_t Len)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void SPI_IRQConfig(uint8_t IRQNumber, uint32_t IRQPriority, uint8_t state)
 {
@@ -436,7 +436,7 @@ void SPI_IRQConfig(uint8_t IRQNumber, uint32_t IRQPriority, uint8_t state)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void SPI_IRQHandling(SPI_Handle_t *pHandle)
 {
@@ -482,7 +482,7 @@ void SPI_IRQHandling(SPI_Handle_t *pHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t SPI_ReceiveDataIT(SPI_Handle_t *pSPIHandle, uint8_t *pRXBuffer, uint32_t Len)
 {
@@ -513,7 +513,7 @@ uint8_t SPI_ReceiveDataIT(SPI_Handle_t *pSPIHandle, uint8_t *pRXBuffer, uint32_t
 /*																										*/
 /* @return				-	none																		*/
 /*																										*/
-/* @Note				-	none																		*/
+/* @Note					-	none																		*/
 /********************************************************************************************************/
 uint8_t SPI_SendDataIT(SPI_Handle_t *pSPIHandle, uint8_t *pTXBuffer, uint32_t Len)
 {
@@ -603,7 +603,7 @@ static void spi_ovr_err_it_handle(SPI_Handle_t *pSPIHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void SPI_ClearOVRFlag(SPI_RegDef_t *pSPIx)
 {

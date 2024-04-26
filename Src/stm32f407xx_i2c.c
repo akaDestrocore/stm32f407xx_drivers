@@ -122,7 +122,7 @@ void I2C_SlaveEnableDisableCallbackEvents(I2C_RegDef_t *pI2Cx,uint8_t state)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void I2C_PeripheralControl(I2C_RegDef_t *pI2Cx, uint8_t state)
 {
@@ -140,7 +140,7 @@ void I2C_PeripheralControl(I2C_RegDef_t *pI2Cx, uint8_t state)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void I2C_PeriphClockControl(I2C_RegDef_t *pI2Cx, uint8_t state)
 {
@@ -171,7 +171,7 @@ void I2C_PeriphClockControl(I2C_RegDef_t *pI2Cx, uint8_t state)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void I2C_Init(I2C_Handle_t *pI2CHandle)
 {
@@ -251,7 +251,7 @@ void I2C_Init(I2C_Handle_t *pI2CHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void I2C_DeInit(I2C_RegDef_t *pI2Cx)
 {
@@ -281,7 +281,7 @@ void I2C_DeInit(I2C_RegDef_t *pI2Cx)
 /*																										*/
 /* @return				- flag state																	*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t I2C_GetFlagStatus(I2C_RegDef_t *pI2Cx , uint32_t FlagName)
 {
@@ -383,7 +383,7 @@ uint8_t I2C_GetFlagStatus(I2C_RegDef_t *pI2Cx , uint32_t FlagName)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- blocking function !															*/
+/* @Note					- blocking function !															*/
 /********************************************************************************************************/
 void I2C_MasterSendData(I2C_Handle_t *pI2CHandle,uint8_t *pTxbuffer, uint32_t Len, uint8_t SlaveAddr,uint8_t Sr)
 {
@@ -461,7 +461,7 @@ void I2C_MasterSendData(I2C_Handle_t *pI2CHandle,uint8_t *pTxbuffer, uint32_t Le
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- blocking function																	*/
+/* @Note					- blocking function																	*/
 /********************************************************************************************************/
 void I2C_MasterReceiveData(I2C_Handle_t *pI2CHandle,uint8_t *pRxBuffer, uint8_t Len, uint8_t SlaveAddr,uint8_t Sr)
 {
@@ -661,7 +661,7 @@ void I2C_Mem_Write(I2C_Handle_t *pI2CHandle, uint16_t DevAddress, uint16_t MemAd
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t state)
 {
@@ -684,7 +684,7 @@ void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t state)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void I2C_IRQConfig(uint8_t IRQNumber, uint32_t IRQPriority, uint8_t state)
 {
@@ -750,7 +750,7 @@ void I2C_IRQConfig(uint8_t IRQNumber, uint32_t IRQPriority, uint8_t state)
 /*																										*/
 /* @return				- busy state																	*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t I2C_MasterSendDataIT(I2C_Handle_t *pI2CHandle,uint8_t *pTxBuffer, uint32_t Len, uint8_t SlaveAddr,uint8_t Sr)
 {
@@ -797,7 +797,7 @@ uint8_t I2C_MasterSendDataIT(I2C_Handle_t *pI2CHandle,uint8_t *pTxBuffer, uint32
 /*																										*/
 /* @return				- busy state																	*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint8_t I2C_MasterReceiveDataIT(I2C_Handle_t *pI2CHandle,uint8_t *pRxBuffer, uint8_t Len, uint8_t SlaveAddr,uint8_t Sr)
 {
@@ -896,7 +896,7 @@ static void I2C_MasterHandleRXNEInterrupt(I2C_Handle_t *pI2CHandle )
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void I2C_CloseReceiveData(I2C_Handle_t *pI2CHandle)
 {
@@ -927,7 +927,7 @@ void I2C_CloseReceiveData(I2C_Handle_t *pI2CHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void I2C_CloseSendData(I2C_Handle_t *pI2CHandle)
 {
@@ -965,7 +965,7 @@ uint8_t I2C_SlaveReceiveData(I2C_RegDef_t *pI2C)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void I2C_Event_IRQHandling(I2C_Handle_t *pI2CHandle)
 {
@@ -1118,7 +1118,7 @@ void I2C_Event_IRQHandling(I2C_Handle_t *pI2CHandle)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void I2C_Error_IRQHandling(I2C_Handle_t *pI2CHandle)
 {

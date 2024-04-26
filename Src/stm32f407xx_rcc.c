@@ -42,7 +42,7 @@ uint16_t a_APB2_Prescaler[4] = {2,4,8,16};
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void RCC_OscConfig(RCC_OscInit_t *pRCC_Osc)
 {
@@ -171,7 +171,7 @@ void RCC_OscConfig(RCC_OscInit_t *pRCC_Osc)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void RCC_ClockConfig(RCC_ClkInit_t  *pRCC_Clk)
 {
@@ -300,7 +300,7 @@ uint32_t RCC_GetSysClockFreq(void)
 /*																										*/
 /* @return				- PLL output frequency															*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint32_t RCC_GetPLLOutputClock(void)
 {
@@ -368,7 +368,7 @@ uint32_t RCC_GetPLLOutputClock(void)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- PA8/PC9 should be configured in alternate function mode.						*/
+/* @Note					- PA8/PC9 should be configured in alternate function mode.						*/
 /********************************************************************************************************/
 void RCC_MCOConfig(uint32_t RCC_MCOx, uint32_t RCC_MCOSource, uint32_t RCC_MCODiv)
 {
@@ -418,7 +418,7 @@ void RCC_MCOConfig(uint32_t RCC_MCOx, uint32_t RCC_MCOSource, uint32_t RCC_MCODi
 /*																										*/
 /* @return				- PLL output frequency															*/
 /*																										*/
-/* @Note				- If a failure is detected on the HSE oscillator clock, this oscillator			*/
+/* @Note					- If a failure is detected on the HSE oscillator clock, this oscillator			*/
 /*         				  is automatically disabled and an interrupt is generated to inform the			*/
 /*         				  software about the failure (Clock Security System Interrupt, CSSI),			*/
 /*		         		  allowing the MCU to perform rescue operations. The CSSI is linked to			*/
@@ -436,7 +436,7 @@ void RCC_EnableCSS(void)
 /*																										*/
 /* @return				- PLL output frequency															*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void RCC_DisableCSS(void)
 {
@@ -444,13 +444,13 @@ void RCC_DisableCSS(void)
 }
 
 /********************************************************************************************************/
-/* @function name 		- RCC_GetHCLKFreq															*/
+/* @function name 		- RCC_GetHCLKFreq																*/
 /*																									 	*/
 /* @brief				- Returns the HCLK frequency													*/
 /*																										*/
 /* @return				- HCLK frequency																*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint32_t RCC_GetHCLKFreq(void)
 {
@@ -464,7 +464,7 @@ uint32_t RCC_GetHCLKFreq(void)
 /*																										*/
 /* @return				- PCLK1 frequency																*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint32_t RCC_GetPCLK1Freq(void)
 {
@@ -522,7 +522,7 @@ uint32_t RCC_GetPCLK1Freq(void)
 /*																										*/
 /* @return				- PCLK2 frequency																*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint32_t RCC_GetPCLK2Freq(void)
 {

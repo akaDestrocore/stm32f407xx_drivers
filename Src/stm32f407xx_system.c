@@ -36,7 +36,7 @@ volatile uint32_t millis = 0;
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void SysTick_Init(void)
 {
@@ -50,7 +50,7 @@ void SysTick_Init(void)
 /*																										*/
 /* @return				- none																			*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 void SysTick_Handler(void)
 {
@@ -64,7 +64,7 @@ void SysTick_Handler(void)
 /*																										*/
 /* @return				- millisecond value																*/
 /*																										*/
-/* @Note				- none																			*/
+/* @Note					- none																			*/
 /********************************************************************************************************/
 uint32_t GetTick(void)
 {
