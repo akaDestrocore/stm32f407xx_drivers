@@ -127,6 +127,33 @@ typedef enum
 	DECEMBER	= 0xCU
 }Month_t;
 
+typedef enum
+{
+	RTC_ALARM_MASK_UNMASKED	   = 0,
+	RTC_ALARM_MASK_DATEWEEKDAY = 1,
+	RTC_ALARM_MASK_HOURS       = 1,
+	RTC_ALARM_MASK_MINUTES     = 1,
+	RTC_ALARM_MASK_SECONDS     = 1
+}RTC_AlarmMask_t;
+
+typedef struct
+{
+    uint8_t hour;
+    uint8_t minute;
+    uint8_t second;
+    RTC_AlarmMask_t sec_msk;
+    RTC_AlarmMask_t min_msk;
+    RTC_AlarmMask_t hour_msk;
+    RTC_AlarmMask_t dateweek_msk;
+}RTC_Alarm_t;
+
+typedef enum {
+    RTC_ALARM_A = 0, // Alarm A
+    RTC_ALARM_B = 1  // Alarm B
+} RTC_AlarmType_t;
+
+
+
 //RTC clock enable/disable
 void RTC_ClockControl(RTC_Clock_State_t state);
 
@@ -147,6 +174,9 @@ void RTC_GetDate(RTC_Handle_t *pRTCHandle, Current_Date_Handle_t* pCurrentDateHa
 
 //RTC System Clock Configuration
 void RTC_SystemClock_Config(uint32_t clk);
+
+//RTC Alarm configuration
+void RTC_SetAlarm_IT(RTC_Handle_t *pRTCHandle, RTC_AlarmType_t alarmType, RTC_Alarm_t *pAlarm);
 
 
 #endif /* __STM32F407XX_RTC_H_ */
